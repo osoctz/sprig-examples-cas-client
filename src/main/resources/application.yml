@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: app-authz-cas-web
+  thymeleaf:
+    cache: false
+    prefix: classpath:/views/
+    mode: HTML
+
+#cas:
+#  server-url-prefix: # 认证中心登录页面地址
+#  client-host-url: # 应用地址，也就是自己的系统地址。
+#  authentication-url: # 认证中心地址
+#  loginType: cas # 动态开启 cas 单点登录
+#  urlPattern: /* # cas  验票拦截路径
+# 配置示例：
+cas:
+  server-url-prefix: https://localhost:8443/cas/login
+  client-host-url: http://cas.metaq.cn:9091/
+  authentication-url:  https://localhost:8443/cas/
+  loginType: cas
+  urlPattern: /*
+  logout-url: https://localhost:8443/cas/logout?service=http://cas.metaq.cn:9091/index
+
+  logout:
+    redirectUrl: https://localhost:8443/cas/login?service=http://cas.metaq.cn:9091/index
+
+server:
+  port: 9091

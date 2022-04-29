@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Spring Security SSO</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+<div class="container">
+    <div class="col-sm-12">
+        <h1>admin View</h1>
+        <div th:if="${authz.hasScopePermission('delete')}">
+            <a href="/admin/delete">delete</a>
+        </div>
+        <p> <a href="/logout">Logout</a> </p>
+    </div>
+</div>
+</body>
+</html>
